@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="trainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4158D0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C850C0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f0f0f0"/>
+  
+  <!-- Track Layout -->
+  <g stroke="#333" stroke-width="8" fill="none">
+    <!-- Straight tracks -->
+    <line x1="50" y1="300" x2="750" y2="300"/>
+    <line x1="400" y1="50" x2="400" y2="550"/>
+    
+    <!-- Curved tracks -->
+    <path d="M50,300 Q200,100 400,50"/>
+    <path d="M400,550 Q600,500 750,300"/>
+    
+    <!-- Switch -->
+    <line x1="400" y1="300" x2="500" y2="200" stroke="#00aa00"/>
+    <circle cx="400" cy="300" r="15" fill="#00aa00"/>
+  </g>
+  
+  <!-- Links -->
+  <g fill="#ff6600" stroke="#333" stroke-width="2">
+    <circle cx="50" cy="300" r="10"/> <!-- DeadEndLink -->
+    <rect x="390" y="290" width="20" height="20"/> <!-- CouplingLink -->
+    <polygon points="740,290 760,290 750,310"/> <!-- SwitchLink -->
+    <g transform="translate(390, 40)"> <!-- MultiSwitchLink -->
+      <circle cx="0" cy="0" r="8"/>
+      <circle cx="20" cy="0" r="8"/>
+      <line x1="0" y1="0" x2="20" y2="0" stroke="#ff6600" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- Train -->
+  <g transform="translate(200, 285)">
+    <rect x="0" y="0" width="100" height="30" fill="url(#trainGradient)" rx="5"/>
+    <circle cx="20" cy="30" r="10" fill="#333"/>
+    <circle cx="80" cy="30" r="10" fill="#333"/>
+    <rect x="5" y="5" width="60" height="15" fill="#fff" rx="2"/>
+  </g>
+  
+  <!-- Labels -->
+  <g font-family="Arial" font-size="14" fill="#333">
+    <text x="20" y="280">DeadEndLink</text>
+    <text x="360" y="340">CouplingLink</text>
+    <text x="700" y="340">SwitchLink</text>
+    <text x="360" y="30">MultiSwitchLink</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial" font-size="24" fill="#333" text-anchor="middle" font-weight="bold">Model Train Simulation</text>
+</svg>
